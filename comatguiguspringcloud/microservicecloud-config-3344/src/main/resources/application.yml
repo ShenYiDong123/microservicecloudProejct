@@ -1,0 +1,23 @@
+server:
+  port: 3344
+
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+
+spring:
+  application:
+    name:  microservicecloud-config
+  cloud:
+    config:
+      server:
+        default-label: master
+        git:
+          uri: https://github.com/ShenYiDong123/microservicecloud-config.git #GitHub上面的git仓库名字
+          #password: password
+          #passphrase
+          skip-ssl-validation: true
+          default-label: master  #加入这个配置就可以正常请求到git上的配置文件了
+          ignore-local-ssh-settings: true
+        label: master
